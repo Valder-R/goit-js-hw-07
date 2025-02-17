@@ -1,9 +1,10 @@
-'use strict';
+const textImput = document.querySelector("#name-input");
+const output = document.querySelector("#name-output");
 
-function getElementWidth(content, padding, border) {
-    return Number.parseFloat(content) + Number.parseFloat(padding) * 2 + Number.parseFloat(border) * 2;
-}
-
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
+textImput.addEventListener("input", (event) => {
+    if (event.currentTarget.value.trim() != 0) {
+        output.textContent = event.currentTarget.value.trim();
+    } else {
+        output.textContent = "Anonymous";
+    }
+})
